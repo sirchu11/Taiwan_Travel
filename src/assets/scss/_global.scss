@@ -1,0 +1,14 @@
+.header {
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    height: 30px;
+    background-color: $c_light;
+    &_link {
+        display: block;
+        width: 240px;
+        height: 30px;
+    }
+    &_logo {
+    }
+}
