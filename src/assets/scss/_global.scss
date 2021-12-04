@@ -1,14 +1,90 @@
+
+html {
+    font-size: 1.25rem;
+    font-family: $font;
+}
+
 .header {
-    position: sticky;
-    top: 0;
-    width: 100vw;
-    height: 30px;
-    background-color: $c_light;
-    &_link {
-        display: block;
-        width: 240px;
-        height: 30px;
+    border-bottom: 1px solid #E5E5E5;
+    .navbar {
+        display: flex;
+        padding: 1rem 2rem;
+        justify-content: space-between;
+        align-items: center;
+        @include mobile {
+            justify-content: center;
+        }
+        &_menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @include mobile {
+                position: fixed;
+                left: -100%;
+                top: 3.7rem;
+                flex-direction: column;
+                background-color: #fff;
+                width: 100%;
+                border-radius: 10px;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow:0 10px 27px rgba(0, 0, 0, 0.05);
+                &.active {
+                    left: 0;
+                }
+            }
+        }
+        &_item {
+            margin-left: 3rem;
+            color: $c_light_gray;
+            cursor: pointer;
+            transition: 0.5s;
+            @include mobile { 
+                margin: 2.5rem 0;
+            }
+            &:hover {
+                color: $c_gray_green;
+            }
+        }
+        &_logo {
+            cursor: pointer;
+        }
     }
-    &_logo {
+    .hamburger {
+        display: none;
+        @include mobile {
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            background: $c_light_green;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            &.active {
+                :nth-child(1) {
+                    transform: translateY(8px) rotate(45deg);
+                }
+                :nth-child(2) {
+                    opacity: 0;
+                }
+                :nth-child(3) {
+                    transform: translateY(-10px) rotate(-45deg);
+                }
+            }
+        }
+        &_bar {
+            display: block;
+            width: 30px;
+            height: 3px;
+            margin: 3px 0;
+            background-color: $c_white;
+            transition: all 0.3s ease-in-out;
+        }
     }
 }
