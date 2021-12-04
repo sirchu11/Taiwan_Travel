@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { MENU_LIST } from "../lib";
 import Logo from '../assets/images/logo.png';
 import { setMenuInfo } from "../store/slice/menu";
